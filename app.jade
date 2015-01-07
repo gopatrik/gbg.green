@@ -1,5 +1,6 @@
 head
 	title app
+	script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY")
 
 
 template(name="main")
@@ -22,8 +23,10 @@ template(name="voteSection")
 	button.vote-button.vote-up Vote +1
 	button.vote-button.vote-down Vote +1
 
-template(name="map")
+//- template(name="map")
 	h1 Map
 	a(href="/") Back
-	img(src="http://maps.googleapis.com/maps/api/staticmap?center={{loc.lat}},{{loc.lng}}&zoom=15&size=600x300&maptype=roadmap&markers=color:blue%7C{{loc.lat}},{{loc.lng}}")
 
+	.map-container(style="width:800px; height:500px;")
+	//- img(src="http://maps.googleapis.com/maps/api/staticmap?center={{loc.lat}},{{loc.lng}}&zoom=15&size=600x300&maptype=terrain&markers=color:red%7C{{loc.lat}},{{loc.lng}}")
+	//- img(src="style=feature:road.highway%7Celement:geometry%7Cvisibility:simplified%7Ccolor:0xc280e9&style=feature:transit.line%7Cvisibility:simplified%7Ccolor:0xbababa&style=feature:road.highway%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0xb06eba&style=feature:road.highway%7Celement:labels.text.fill%7Cvisibility:on%7Ccolor:0xffffff")

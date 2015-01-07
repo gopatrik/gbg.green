@@ -14,9 +14,3 @@ Template.location.helpers({
 	}
 });
 
-Template.map.helpers({
-	loc: function () {
-		// var a = Session.get("location");
-		return Geolocation.latLng();	
-	}
-});

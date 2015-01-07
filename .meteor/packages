@@ -11,3 +11,4 @@ stylus
 mquandalle:jade
 iron:router
 mdg:geolocation
+dburles:google-maps
