@@ -16,11 +16,10 @@
 // //   // ... more screen sizes and platforms ...
 // // });
 
-// // App.launchScreens({
-// //   'iphone': 'splash/Default~iphone.png',
-// //   'iphone_2x': 'splash/Default@2x~iphone.png',
-// //   // ... more screen sizes and platforms ...
-// // });
+App.launchScreens({
+  'iphone': 'public/img/loading.png',
+  'iphone_2x': 'public/img/loading.png',
+});
 
 // // Set PhoneGap/Cordova preferences
 // App.setPreference('BackgroundColor', '0xff0000ff');

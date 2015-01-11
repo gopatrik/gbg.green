@@ -1,4 +1,6 @@
 fg = #516174
+golden = 1.618
+
 
 html, body
 	margin 0
@@ -7,41 +9,60 @@ html, body
 body
 	background #FFFBF5
 	font-family avenir
+	
+.full-height
+	max-height 100vh
+
 .fg
 	color fg
 
 .vote-button
-	width 110px
-	padding 20px 10px
-	border 2px solid rgba(black, 0.6)
+	width 23vw
+	// padding 20px 10px
+	
+	height (@width/golden)
+	border .5vw solid rgba(fg,0.5)
 	color white
-	border-radius 6px
-	margin 20px
+	border-radius 2vw
+	margin-left 5vw
+	margin-right @margin-left
 	&.vote-up
 		background #A0CB56
 		
 	&.vote-down
 		background #CA703B
 .m
-	margin 20px
+	margin 3vh
 .b
-	border 2px solid rgba(fg,0.5)
+	border .5vw solid rgba(fg,0.5)
 	
 .bb
-	border-bottom 2px solid rgba(fg,0.5)
+	border-bottom .5vw solid rgba(fg,0.5)
 .bt
-	border-top 2px solid rgba(fg,0.5)
+	border-top .5vw solid rgba(fg,0.5)
 	
+.no-overflow
+	overflow hidden
+	
+.bottom-menu
+	li
+		padding-left 3vw
+		padding-right @padding-left
+		margin-top 1vh
+		a
+			color fg
+			text-decoration none
+
 .bar
 	position relative
-	height 25px
+	height 4vh
 	background-color #92B062
 	.meter
 		position: relative
 		height 100%
 		background-color #9ECC4B
 		.marker
-			width 20px
+			width 5vw
 			position: absolute
-			right: -10px;
-			top -40px
+			right: -2.5vw;
+			top -5vh

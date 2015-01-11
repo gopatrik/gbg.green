@@ -1,12 +1,11 @@
 head
-	title app
-	//- script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY")
-
+	title Kommunity
 
 template(name="main")
-	+top
-	+yield
-	+nav
+	section.full-height.no-overflow
+		//- +top
+		+yield
+		+nav
 
 
 template(name="top")
@@ -15,18 +14,19 @@ template(name="top")
 
 template(name="voteScreen")
 	
-	section.center.bb
+	section.center.bb(style="height:32vh; padding-top: 3vh;")
 		//- +location
 		p.medium.fg Vad tycker du om
-		p.bold.fg.large Chalmers, Jonhanneberg?
+		p.bold.fg.medium Chalmers, Jonhanneberg?
 		+voteSection
-		p.small.underline.fg.bold Rösta och se vad andra tycker!
+		//- p.small.underline.fg.bold Rösta och se vad andra tycker!
 	+inlineMap
-	+engagement
+	section(style="height:18vh;")
+		+engagement
 
 template(name="engagement")
 	section.m
-		p.large.fg Din engagemangsnivå
+		p.fg.small Din engagemangsnivå
 		.bar.b
 			.meter(style="width:70%")
 				.marker.fg.center
@@ -34,17 +34,8 @@ template(name="engagement")
 					br
 					span.small ▼
 
-
-template(name="nav")
-	section.bt(style="background-color:rgba(0,0,0,0.05); position:fixed; bottom:0; width: 100%;")
-		nav
-			ul.inline-list
-				li.small.fg Skicka feedback
-				li.small.fg Belöningar
-				li.small.fg Topplista
-
 template(name="inlineMap")
-	section.bb
+	section.bb.no-overflow(style="height:40vh;")
 		img(src="/maps.png")
 
 template(name="location")
@@ -57,6 +48,14 @@ template(name="location")
 template(name="voteSection")
 	button.vote-button.vote-up.medium ▲
 	button.vote-button.vote-down.medium ▼
+
+template(name="nav")
+	section.bt(style="background-color:rgba(0,0,0,0.05); position:fixed; bottom:0; width: 100%; height:8vh;")
+		nav
+			ul.inline-list.right.bottom-menu
+				li.fg: a.small(href="/") Skicka feedback
+				li.fg: a.small(href="/") Belöningar
+				li.fg: a.small(href="/") Topplista
 
 //- template(name="map")
 	h1 Map
