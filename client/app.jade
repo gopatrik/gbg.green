@@ -1,0 +1,67 @@
+head
+	title app
+	//- script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2V8IFYwB-Syx2-lauWq8EgjNmS7b8fMY")
+
+
+template(name="main")
+	+top
+	+yield
+	+nav
+
+
+template(name="top")
+	section
+		p ---------------
+
+template(name="voteScreen")
+	
+	section.center.bb
+		//- +location
+		p.medium.fg Vad tycker du om
+		p.bold.fg.large Chalmers, Jonhanneberg?
+		+voteSection
+		p.small.underline.fg.bold Rösta och se vad andra tycker!
+	+inlineMap
+	+engagement
+
+template(name="engagement")
+	section.m
+		p.large.fg Din engagemangsnivå
+		.bar.b
+			.meter(style="width:70%")
+				.marker.fg.center
+					span.nm xx
+					br
+					span.small ▼
+
+
+template(name="nav")
+	section.bt(style="background-color:rgba(0,0,0,0.05); position:fixed; bottom:0; width: 100%;")
+		nav
+			ul.inline-list
+				li.small.fg Skicka feedback
+				li.small.fg Belöningar
+				li.small.fg Topplista
+
+template(name="inlineMap")
+	section.bb
+		img(src="/maps.png")
+
+template(name="location")
+	h2 Location
+		with coordinates
+			p= lat
+			p= lng
+
+
+template(name="voteSection")
+	button.vote-button.vote-up.medium ▲
+	button.vote-button.vote-down.medium ▼
+
+//- template(name="map")
+	h1 Map
+	a(href="/") Back
+
+	.map-container(style="width:800px; height:500px;")
+	//- img(src="http://maps.googleapis.com/maps/api/staticmap?center={{loc.lat}},{{loc.lng}}&zoom=15&size=600x300&maptype=terrain&markers=color:red%7C{{loc.lat}},{{loc.lng}}")
+	//- img(src="style=feature:road.highway%7Celement:geometry%7Cvisibility:simplified%7Ccolor:0xc280e9&style=feature:transit.line%7Cvisibility:simplified%7Ccolor:0xbababa&style=feature:road.highway%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0xb06eba&style=feature:road.highway%7Celement:labels.text.fill%7Cvisibility:on%7Ccolor:0xffffff")

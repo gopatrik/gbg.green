@@ -1,18 +1,47 @@
+fg = #516174
+
 html, body
 	margin 0
 	padding 0
 
 body
-	background #E3E3E3
+	background #FFFBF5
 	font-family avenir
-	
+.fg
+	color fg
+
 .vote-button
-	width 100%
-	padding 40px
-	border 1px solid black
-	
+	width 110px
+	padding 20px 10px
+	border 2px solid rgba(black, 0.6)
+	color white
+	border-radius 6px
+	margin 20px
 	&.vote-up
-		background #aaffaa
+		background #A0CB56
 		
 	&.vote-down
-		background #ffaaaa
+		background #CA703B
+.m
+	margin 20px
+.b
+	border 2px solid rgba(fg,0.5)
+	
+.bb
+	border-bottom 2px solid rgba(fg,0.5)
+.bt
+	border-top 2px solid rgba(fg,0.5)
+	
+.bar
+	position relative
+	height 25px
+	background-color #92B062
+	.meter
+		position: relative
+		height 100%
+		background-color #9ECC4B
+		.marker
+			width 20px
+			position: absolute
+			right: -10px;
+			top -40px
